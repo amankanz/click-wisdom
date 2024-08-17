@@ -14,19 +14,11 @@ export default function App() {
 function Main() {
   return (
     <main id="container">
-      <Heading />
+      <h2>Advise Me 👴🏽</h2>
       <AdviceContainer />
       <Logo />
     </main>
   );
-}
-
-function Heading() {
-  return <h2>Advise Me 👴🏽</h2>;
-}
-
-function Logo() {
-  return <img src="/1.png" alt="ClickWisdom logo" id="adviseMeImg" />;
 }
 
 function AdviceContainer() {
@@ -63,8 +55,15 @@ function AdviceContainer() {
   return (
     <section className="advice-container">
       <Advice message={loadedAdvice} />
-      <Loader loader={loader} />
-      <Button onGetAdvice={handleGetAdvice} />
+
+      <div
+        className="loader"
+        style={loader ? { display: "block" } : { display: "none" }}
+      ></div>
+
+      <button id="loadAdviceBtn" onClick={handleGetAdvice}>
+        Get Advice
+      </button>
     </section>
   );
 }
@@ -72,40 +71,18 @@ function AdviceContainer() {
 function Advice({ message }) {
   return (
     <div className="advice">
-      <FontAwesome />
-      <LoadingAdvice>{message}</LoadingAdvice>
+      <i className="fa-sharp fa-solid fa-quote-left"></i>
+
+      <p
+        id="loadingAdvice"
+        style={message ? { display: "block" } : { display: "none" }}
+      >
+        {message}
+      </p>
     </div>
   );
 }
 
-function FontAwesome() {
-  return <i className="fa-sharp fa-solid fa-quote-left"></i>;
-}
-
-function LoadingAdvice({ children }) {
-  return (
-    <p
-      id="loadingAdvice"
-      style={children ? { display: "block" } : { display: "none" }}
-    >
-      {children}
-    </p>
-  );
-}
-
-function Loader({ loader }) {
-  return (
-    <div
-      className="loader"
-      style={loader ? { display: "block" } : { display: "none" }}
-    ></div>
-  );
-}
-
-function Button({ onGetAdvice }) {
-  return (
-    <button id="loadAdviceBtn" onClick={onGetAdvice}>
-      Get Advice
-    </button>
-  );
+function Logo() {
+  return <img src="/1.png" alt="ClickWisdom logo" id="adviseMeImg" />;
 }
