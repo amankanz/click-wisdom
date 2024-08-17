@@ -64,6 +64,15 @@ body {
   }
 }
 
+.footer {
+  text-align: "center";
+  padding: "10px";
+}
+
+.footer a {
+  color: #161622;
+}
+
 /* Loader */
 .loader {
   aspect-ratio: 3.5;

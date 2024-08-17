@@ -17,6 +17,7 @@ function Main() {
       <h2>Advise Me 👴🏽</h2>
       <AdviceContainer />
       <Logo />
+      <Footer />
     </main>
   );
 }
@@ -85,4 +86,22 @@ function Advice({ message }) {
 
 function Logo() {
   return <img src="/1.png" alt="ClickWisdom logo" id="adviseMeImg" />;
+}
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <p>
+        &copy;{" "}
+        <a
+          href="https://kanezaio.netlify.app/#intro"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Kaneza
+        </a>{" "}
+        2024
+      </p>
+    </footer>
+  );
 }
