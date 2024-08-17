@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const initialTip = 'Press "Get advice" to be advised...🌟';
+const message = 'Press "Get advice" to be advised...🌟';
 
 export default function App() {
   return (
@@ -31,7 +31,7 @@ function Logo() {
 
 function AdviceContainer() {
   const [loader, setLoader] = useState(false);
-  const [loadedAdvice, setLoadedAdvice] = useState(initialTip);
+  const [loadedAdvice, setLoadedAdvice] = useState(message);
 
   function loading() {
     setLoader(true);
@@ -62,18 +62,18 @@ function AdviceContainer() {
 
   return (
     <section className="advice-container">
-      <Advice initialTip={loadedAdvice} />
+      <Advice message={loadedAdvice} />
       <Loader loader={loader} />
       <Button onGetAdvice={handleGetAdvice} />
     </section>
   );
 }
 
-function Advice({ initialTip }) {
+function Advice({ message }) {
   return (
     <div className="advice">
       <FontAwesome />
-      <LoadingAdvice>{initialTip}</LoadingAdvice>
+      <LoadingAdvice>{message}</LoadingAdvice>
     </div>
   );
 }
