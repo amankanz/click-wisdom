@@ -1,3 +1,5 @@
+https://click-wisdom.netlify.app/
+
 # Click Wisdom App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
